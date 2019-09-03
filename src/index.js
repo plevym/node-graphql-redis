@@ -1,18 +1,13 @@
 const { ApolloServer, PubSub, gql } = require('apollo-server')
-const { makeExecutableSchema } = require('graphql-tools')
 const RedisServer = require('ioredis')
 const pubsub = new PubSub()
 const redis = new RedisServer()
 const { typeDefs } = require('./typedefs')
 const { resolvers } = require('./resolvers')
 
-const schema = makeExecutableSchema({
-  typeDefs,
-  resolvers,
-})
-
 const server = new ApolloServer({
-  schema,
+	typeDefs,
+	resolvers,
   context: {
   	redis,
   	pubsub,
