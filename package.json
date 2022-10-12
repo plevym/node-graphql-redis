@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "apollo-server": "^2.9.3",
+    "apollo-server": "^2.25.4",
     "ioredis": "^4.14.0",
     "nodemon": "^1.19.2"
   }
